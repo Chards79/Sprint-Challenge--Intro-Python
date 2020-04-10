@@ -27,26 +27,26 @@ humans = [
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
-print("Starts with D:" + str(humans))
-check = 'D'
-a = [x for x in humans if x.lower().startswith(check.lower())]
+print("Starts with D:")
+a = [x for x in humans if x.name.startswith('D')]
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
-b = []
+b = [x for x in humans if x.name.endswith('e')]
 print(b)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
-print("Starts between C and G, inclusive:")
-c = []
-print(c)
+# print("Starts between C and G, inclusive:")
+# allowed = 'CDEFG'
+# c = [x for x in humans if x.name.startswith(y) for y in allowed]
+# print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
 print("Ages plus 10:")
-d = []
+d = [x for x in humans if x.age(x + 10)]
 print(d)
 
 # Write a list comprehension that creates a list of strings which are the name
