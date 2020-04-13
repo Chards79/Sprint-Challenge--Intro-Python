@@ -52,7 +52,7 @@ print(d)
 # Write a list comprehension that creates a list of strings which are the name
 # joined to the age with a hyphen, for example "David-31", for all humans.
 print("Name hyphen age:")
-e = ['-'.join(x) for x.name or x.age in humans]
+e = ['-'.join([str(x.name, y.age) for x, y in humans])]
 print(e)
 
 # Write a list comprehension that creates a list of tuples containing name and
@@ -71,5 +71,5 @@ print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
 print("Square root of ages:")
-h = []
+h = [math.sqrt(x.age) for x in humans]
 print(h)
