@@ -5,9 +5,9 @@ import csv
 
 class City():
     def __init__(self, name, lat, lon):
-        self.name = self.name
-        self.lat = self.lat
-        self.lon = self.lon
+        self.name = name
+        self.lat = lat
+        self.lon = lon
 
 
 # We have a collection of US cities with population over 750,000 stored in the
@@ -29,7 +29,13 @@ def cityreader(cities=[]):
     # TODO Implement the functionality to read from the 'cities.csv' file
     # For each city record, create a new City instance and add it to the
     # `cities` list
-
+    with open('cities.csv', 'r') as csv_file:
+        reader = csv.reader(csv_file)
+        next(reader, None)
+        for name, lat, lon in reader:
+            lat = float(lat)
+            lon = float(lon)
+            cities.append(City(name, lat, lon))
     return cities
 
 
